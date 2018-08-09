@@ -11,6 +11,6 @@ public enum ClientStatus {
     }
 
     public int discountPercent() {
-        return discountPercent;
+        return this.discountPercent;
     }
 }

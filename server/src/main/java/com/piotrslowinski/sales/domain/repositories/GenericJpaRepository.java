@@ -1,10 +1,11 @@
 package com.piotrslowinski.sales.domain.repositories;
 
-import javax.persistence.EntityManager;
-import javax.persistence.PersistenceContext;
 import java.lang.reflect.ParameterizedType;
 import java.util.NoSuchElementException;
 import java.util.Optional;
+
+import javax.persistence.EntityManager;
+import javax.persistence.PersistenceContext;
 
 public abstract class GenericJpaRepository<T> implements Repository<T> {
 
@@ -18,13 +19,14 @@ public abstract class GenericJpaRepository<T> implements Repository<T> {
     }
 
     public void save(T t) {
-        entityManager.persist(t);
+        this.entityManager.persist(t);
     }
 
     public Optional<T> get(Long id) {
-        T t = entityManager.find(clazz, id);
-        if ( t == null)
+        T t = this.entityManager.find(this.clazz, id);
+        if (t == null) {
             throw new NoSuchElementException();
+        }
         return Optional.of(t);
     }
 }

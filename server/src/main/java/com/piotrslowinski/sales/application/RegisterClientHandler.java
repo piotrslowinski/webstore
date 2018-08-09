@@ -5,6 +5,7 @@ import com.piotrslowinski.sales.domain.StandardClient;
 import com.piotrslowinski.sales.domain.commands.Command;
 import com.piotrslowinski.sales.domain.commands.RegisterClientCommand;
 import com.piotrslowinski.sales.domain.repositories.ClientRepository;
+
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -26,7 +27,7 @@ public class RegisterClientHandler implements Handler<RegisterClientCommand> {
                 cmd.getAddress(),
                 cmd.getClientStatus()
         );
-        clientRepository.save(client);
+        this.clientRepository.save(client);
     }
 
     @Override

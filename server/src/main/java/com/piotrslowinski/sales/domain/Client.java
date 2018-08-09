@@ -1,11 +1,12 @@
 package com.piotrslowinski.sales.domain;
 
+import javax.persistence.*;
+
 import com.fasterxml.jackson.annotation.JsonSubTypes;
 import com.fasterxml.jackson.annotation.JsonTypeInfo;
 
-import javax.persistence.*;
 
-@JsonTypeInfo(use=JsonTypeInfo.Id.NAME, include = JsonTypeInfo.As.PROPERTY, property = "type")
+@JsonTypeInfo(use = JsonTypeInfo.Id.NAME, include = JsonTypeInfo.As.PROPERTY, property = "type")
 @JsonSubTypes({
         @JsonSubTypes.Type(value = StandardClient.class, name = "standard_client")
 })
@@ -20,17 +21,17 @@ public abstract class Client {
 
     private String email;
 
-    @Column(name="first_name")
+    @Column(name = "first_name")
     private String firstName;
 
-    @Column(name="last_name")
+    @Column(name = "last_name")
     private String lastName;
 
     @OneToOne(
             cascade = CascadeType.ALL,
             fetch = FetchType.LAZY
     )
-    @JoinColumn(name="address_id")
+    @JoinColumn(name = "address_id")
     private Address address;
 
     private ClientStatus clientStatus;
@@ -45,7 +46,7 @@ public abstract class Client {
     }
 
     public Long getId() {
-        return id;
+        return this.id;
     }
 
     public void setId(Long id) {
@@ -53,7 +54,7 @@ public abstract class Client {
     }
 
     public String getEmail() {
-        return email;
+        return this.email;
     }
 
     public void setEmail(String email) {
@@ -61,7 +62,7 @@ public abstract class Client {
     }
 
     public String getFirstName() {
-        return firstName;
+        return this.firstName;
     }
 
     public void setFirstName(String firstName) {
@@ -69,7 +70,7 @@ public abstract class Client {
     }
 
     public String getLastName() {
-        return lastName;
+        return this.lastName;
     }
 
     public void setLastName(String lastName) {
@@ -77,7 +78,7 @@ public abstract class Client {
     }
 
     public Address getAddress() {
-        return address;
+        return this.address;
     }
 
     public void setAddress(Address address) {
@@ -85,7 +86,7 @@ public abstract class Client {
     }
 
     public ClientStatus getClientStatus() {
-        return clientStatus;
+        return this.clientStatus;
     }
 
     public void setClientStatus(ClientStatus clientStatus) {

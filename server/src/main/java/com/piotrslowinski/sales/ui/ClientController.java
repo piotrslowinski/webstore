@@ -1,13 +1,15 @@
 package com.piotrslowinski.sales.ui;
 
+import java.util.List;
+
 import com.piotrslowinski.sales.application.ClientFinder;
 import com.piotrslowinski.sales.application.CommandGateway;
 import com.piotrslowinski.sales.application.dtos.ClientDto;
 import com.piotrslowinski.sales.domain.commands.RegisterClientCommand;
 import com.piotrslowinski.sales.domain.repositories.ClientRepository;
+
 import org.springframework.web.bind.annotation.*;
 
-import java.util.List;
 
 @RestController
 @RequestMapping("/client")
@@ -25,12 +27,12 @@ public class ClientController {
 
     @PostMapping
     public void registerNewClient(@RequestBody RegisterClientCommand cmd) {
-        gateway.execute(cmd);
+        this.gateway.execute(cmd);
     }
 
     @GetMapping
     public List<ClientDto> getAllClients() {
-        return clientFinder.getAll();
+        return this.clientFinder.getAll();
     }
 
 }

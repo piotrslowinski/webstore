@@ -16,7 +16,7 @@ public class RegisterClientCommand implements Command {
     private ClientStatus clientStatus;
 
     public String getEmail() {
-        return email;
+        return this.email;
     }
 
     public void setEmail(String email) {
@@ -24,7 +24,7 @@ public class RegisterClientCommand implements Command {
     }
 
     public String getFirstName() {
-        return firstName;
+        return this.firstName;
     }
 
     public void setFirstName(String firstName) {
@@ -32,7 +32,7 @@ public class RegisterClientCommand implements Command {
     }
 
     public String getLastName() {
-        return lastName;
+        return this.lastName;
     }
 
     public void setLastName(String lastName) {
@@ -40,7 +40,7 @@ public class RegisterClientCommand implements Command {
     }
 
     public Address getAddress() {
-        return address;
+        return this.address;
     }
 
     public void setAddress(Address address) {
@@ -48,7 +48,7 @@ public class RegisterClientCommand implements Command {
     }
 
     public ClientStatus getClientStatus() {
-        return clientStatus;
+        return this.clientStatus;
     }
 
     public void setClientStatus(ClientStatus clientStatus) {

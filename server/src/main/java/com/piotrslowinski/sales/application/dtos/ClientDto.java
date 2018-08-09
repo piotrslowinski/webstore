@@ -28,7 +28,7 @@ public class ClientDto {
     }
 
     public Long getId() {
-        return id;
+        return this.id;
     }
 
     public void setId(Long id) {
@@ -36,7 +36,7 @@ public class ClientDto {
     }
 
     public String getEmail() {
-        return email;
+        return this.email;
     }
 
     public void setEmail(String email) {
@@ -44,7 +44,7 @@ public class ClientDto {
     }
 
     public String getFirstName() {
-        return firstName;
+        return this.firstName;
     }
 
     public void setFirstName(String firstName) {
@@ -52,7 +52,7 @@ public class ClientDto {
     }
 
     public String getLastName() {
-        return lastName;
+        return this.lastName;
     }
 
     public void setLastName(String lastName) {
@@ -60,7 +60,7 @@ public class ClientDto {
     }
 
     public Address getAddress() {
-        return address;
+        return this.address;
     }
 
     public void setAddress(Address address) {
@@ -68,7 +68,7 @@ public class ClientDto {
     }
 
     public ClientStatus getClientStatus() {
-        return clientStatus;
+        return this.clientStatus;
     }
 
     public void setClientStatus(ClientStatus clientStatus) {

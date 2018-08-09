@@ -1,11 +1,12 @@
 package com.piotrslowinski.sales.application;
 
-import com.piotrslowinski.sales.domain.commands.Command;
-import org.springframework.context.ApplicationContext;
-import org.springframework.stereotype.Component;
-
 import java.util.Map;
 import java.util.Optional;
+
+import com.piotrslowinski.sales.domain.commands.Command;
+
+import org.springframework.context.ApplicationContext;
+import org.springframework.stereotype.Component;
 
 @Component
 public class CommandGateway {
@@ -22,7 +23,7 @@ public class CommandGateway {
     }
 
     private Handler handlerFor(Command command) {
-        Map<String, Handler> handlers = applicationContext.getBeansOfType(Handler.class);
+        Map<String, Handler> handlers = this.applicationContext.getBeansOfType(Handler.class);
         Optional<Handler> handlerOptional = handlers.values().stream().
                 filter((h) -> h.canHandle(command)).findFirst();
         return handlerOptional.orElseThrow(() ->

@@ -1,8 +1,8 @@
 package com.piotrslowinski.sales.application;
 
-import com.piotrslowinski.sales.application.dtos.ClientDto;
-
 import java.util.List;
+
+import com.piotrslowinski.sales.application.dtos.ClientDto;
 
 public interface ClientFinder {
 

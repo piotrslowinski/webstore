@@ -3,7 +3,7 @@ package com.piotrslowinski.sales.domain;
 import javax.persistence.*;
 
 @Entity
-@Table(name="addresses")
+@Table(name = "addresses")
 public class Address {
 
     @Id
@@ -18,7 +18,7 @@ public class Address {
 
     private String city;
 
-    @Column(name="postal_code")
+    @Column(name = "postal_code")
     private String postalCode;
 
     public Address(String line1, String line2, String country, String city, String postalCode) {
@@ -30,7 +30,7 @@ public class Address {
     }
 
     public String getLine1() {
-        return line1;
+        return this.line1;
     }
 
     public void setLine1(String line1) {
@@ -38,7 +38,7 @@ public class Address {
     }
 
     public String getLine2() {
-        return line2;
+        return this.line2;
     }
 
     public void setLine2(String line2) {
@@ -46,7 +46,7 @@ public class Address {
     }
 
     public String getCountry() {
-        return country;
+        return this.country;
     }
 
     public void setCountry(String country) {
@@ -54,7 +54,7 @@ public class Address {
     }
 
     public String getCity() {
-        return city;
+        return this.city;
     }
 
     public void setCity(String city) {
@@ -62,7 +62,7 @@ public class Address {
     }
 
     public String getPostalCode() {
-        return postalCode;
+        return this.postalCode;
     }
 
     public void setPostalCode(String postalCode) {
