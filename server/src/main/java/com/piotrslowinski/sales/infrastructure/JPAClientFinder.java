@@ -4,15 +4,18 @@ import java.util.List;
 
 import javax.persistence.EntityManager;
 
+import com.piotrslowinski.sales.application.ClientFinder;
 import com.piotrslowinski.sales.application.dtos.ClientDto;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 @Component
-public class JPAClientFinder {
+public class JPAClientFinder implements ClientFinder {
 
     private EntityManager entityManager;
 
+    @Autowired
     public JPAClientFinder(EntityManager entityManager) {
         this.entityManager = entityManager;
     }

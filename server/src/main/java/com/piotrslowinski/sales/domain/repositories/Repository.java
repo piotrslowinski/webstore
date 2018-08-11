@@ -1,6 +1,6 @@
 package com.piotrslowinski.sales.domain.repositories;
 
-import java.util.Optional;
+        import java.util.Optional;
 
 public interface Repository<T> {
 
@@ -8,3 +8,4 @@ public interface Repository<T> {
 
     Optional<T> get(Long id);
 }
+
