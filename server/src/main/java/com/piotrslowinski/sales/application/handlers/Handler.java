@@ -1,4 +1,4 @@
-package com.piotrslowinski.sales.application;
+package com.piotrslowinski.sales.application.handlers;
 
 import com.piotrslowinski.sales.domain.commands.Command;
 

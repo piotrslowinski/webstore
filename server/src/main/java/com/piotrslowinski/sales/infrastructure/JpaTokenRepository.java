@@ -1,12 +1,14 @@
 package com.piotrslowinski.sales.infrastructure;
 
+import java.util.Optional;
+
+import javax.persistence.NoResultException;
+
 import com.piotrslowinski.sales.domain.Token;
 import com.piotrslowinski.sales.domain.repositories.GenericJpaRepository;
 import com.piotrslowinski.sales.domain.repositories.TokenRepository;
-import org.springframework.stereotype.Repository;
 
-import javax.persistence.NoResultException;
-import java.util.Optional;
+import org.springframework.stereotype.Repository;
 
 @Repository
 public class JpaTokenRepository extends GenericJpaRepository<Token> implements TokenRepository {

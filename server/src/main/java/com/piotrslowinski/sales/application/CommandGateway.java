@@ -3,6 +3,7 @@ package com.piotrslowinski.sales.application;
 import java.util.Map;
 import java.util.Optional;
 
+import com.piotrslowinski.sales.application.handlers.Handler;
 import com.piotrslowinski.sales.domain.commands.Command;
 
 import org.springframework.context.ApplicationContext;

@@ -1,8 +1,9 @@
 package com.piotrslowinski.sales.domain.users;
 
-import javax.persistence.*;
 import java.util.HashSet;
 import java.util.Set;
+
+import javax.persistence.*;
 
 @Entity
 @Table(name = "users")
@@ -25,6 +26,8 @@ public class User {
     @Enumerated(EnumType.STRING)
     private Set<Role> roles = new HashSet<>();
 
+    private boolean active;
+
     public User() {
     }
 
@@ -32,26 +35,46 @@ public class User {
         this.email = email;
         this.password = password;
         this.roles.add(Role.STANDARD);
+        this.active = true;
+    }
+
+    public User(String email, String password, Role role) {
+        this.email = email;
+        this.password = password;
+        this.roles.add(role);
+        this.active = true;
     }
 
     public Long getId() {
-        return id;
+        return this.id;
     }
 
     public String getEmail() {
-        return email;
+        return this.email;
     }
 
     public Set<Role> getRoles() {
-        return roles;
+        return this.roles;
+    }
+
+    public void setRoles(Set<Role> roles) {
+
     }
 
 
     public String getPassword() {
-        return password;
+        return this.password;
     }
 
     public void setPassword(String password) {
         this.password = password;
+    }
+
+    public boolean isActive() {
+        return this.active;
+    }
+
+    public void setActive(boolean active) {
+        this.active = active;
     }
 }

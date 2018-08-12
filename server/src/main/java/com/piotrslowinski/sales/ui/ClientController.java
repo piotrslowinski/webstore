@@ -9,6 +9,7 @@ import com.piotrslowinski.sales.domain.commands.RegisterClientCommand;
 import com.piotrslowinski.sales.domain.repositories.ClientRepository;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 
 
@@ -32,6 +33,7 @@ public class ClientController {
         this.gateway.execute(cmd);
     }
 
+    @PreAuthorize("hasAnyRole('ADMIN')")
     @GetMapping
     public List<ClientDto> getAllClients() {
         return this.clientFinder.getAll();

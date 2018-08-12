@@ -9,7 +9,7 @@ public class ChangeUserPasswordCommand implements Command {
     private String repeatedPassword;
 
     public Long getUserId() {
-        return userId;
+        return this.userId;
     }
 
     public void setUserId(Long userId) {
@@ -17,7 +17,7 @@ public class ChangeUserPasswordCommand implements Command {
     }
 
     public String getPassword() {
-        return password;
+        return this.password;
     }
 
     public void setPassword(String password) {
@@ -25,7 +25,7 @@ public class ChangeUserPasswordCommand implements Command {
     }
 
     public String getRepeatedPassword() {
-        return repeatedPassword;
+        return this.repeatedPassword;
     }
 
     public void setRepeatedPassword(String repeatedPassword) {

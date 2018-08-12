@@ -1,6 +1,6 @@
 package com.piotrslowinski.sales.domain.commands;
 
-public class RegisterUserCommand implements Command {
+public class RegisterAdminCommand implements Command {
 
     private String email;
 

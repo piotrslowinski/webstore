@@ -1,10 +1,11 @@
 package com.piotrslowinski.sales.domain;
 
-import com.piotrslowinski.sales.domain.users.User;
-
-import javax.persistence.*;
 import java.time.LocalDate;
 import java.util.UUID;
+
+import javax.persistence.*;
+
+import com.piotrslowinski.sales.domain.users.User;
 
 public class Token {
 
@@ -17,7 +18,7 @@ public class Token {
     @Column(name = "expiry_date")
     private LocalDate expiryDate;
 
-    private Boolean active;
+    private boolean active;
 
     @ManyToOne
     private User user;
@@ -27,13 +28,21 @@ public class Token {
 
     public Token(User user) {
         this.value = UUID.randomUUID().toString();
-        this.expiryDate = LocalDate.now().plusDays(30);
+        this.expiryDate = LocalDate.now().plusDays(1);
         this.active = true;
         this.user = user;
     }
 
+    public boolean isValid() {
+        return this.active && !isExpired();
+    }
+
+    public boolean isExpired() {
+        return this.expiryDate.isBefore(LocalDate.now());
+    }
+
     public Long getId() {
-        return id;
+        return this.id;
     }
 
     public void setId(Long id) {
@@ -41,7 +50,7 @@ public class Token {
     }
 
     public String getValue() {
-        return value;
+        return this.value;
     }
 
     public void setValue(String value) {
@@ -49,7 +58,7 @@ public class Token {
     }
 
     public LocalDate getExpiryDate() {
-        return expiryDate;
+        return this.expiryDate;
     }
 
     public void setExpiryDate(LocalDate expiryDate) {
@@ -57,7 +66,7 @@ public class Token {
     }
 
     public Boolean getActive() {
-        return active;
+        return this.active;
     }
 
     public void setActive(Boolean active) {
@@ -65,7 +74,7 @@ public class Token {
     }
 
     public User getUser() {
-        return user;
+        return this.user;
     }
 
     public void setUser(User user) {

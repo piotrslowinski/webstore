@@ -10,14 +10,17 @@ public class UserDto {
 
     private Set<Role> roles;
 
+    private boolean active;
+
     public UserDto(User user) {
         this.id = user.getId();
         this.email = user.getEmail();
         this.roles = user.getRoles();
+        this.active = user.isActive();
     }
 
     public Long getId() {
-        return id;
+        return this.id;
     }
 
     public void setId(Long id) {
@@ -25,7 +28,7 @@ public class UserDto {
     }
 
     public String getEmail() {
-        return email;
+        return this.email;
     }
 
     public void setEmail(String email) {
@@ -33,7 +36,7 @@ public class UserDto {
     }
 
     public Set<Role> getRoles() {
-        return roles;
+        return this.roles;
     }
 
     public void setRoles(Set<Role> roles) {
